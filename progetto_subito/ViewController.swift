@@ -8,8 +8,11 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController {
+    
+    var followerRepo: [Any] = []
     
     @IBOutlet weak var author: UITextField!
     @IBOutlet weak var repo: UITextField!
@@ -33,11 +36,27 @@ class ViewController: UIViewController {
     func downloadStarred(author: String, repo: String) -> Void {
        var url = "https://api.github.com/repos/"+author+"/"+repo+"/stargazers"
         
-        AF.request(url).responseJSON { response in
-            print("REQUEST:", response.request)
-            print("RESPONSE:", response.response)
-            print("RESULT:", response.result)
+        AF.request(url).responseData { response in
             
+            switch response.result {
+            case .success:
+                
+                let json = try? JSON(data:response.data!)
+                for (index,subJson):(String, JSON) in json! {
+                    var avatar = subJson["avatar_url"].stringValue;
+                    var login = subJson["login"].stringValue;
+                    var user = User(avatar: avatar, name: login)
+                    self.followerRepo.append(user);
+                }
+                
+              print("utenti_ottenuti", self.followerRepo)
+              case .failure(let error):
+                print("Request failed with error: \(error)")
+            }
+            
+            
+            
+          
             
         }
         
@@ -47,3 +66,11 @@ class ViewController: UIViewController {
 
 }
 
+class User {
+    var avatar: String
+    var name: String
+    init(avatar: String, name: String) {
+        self.avatar = avatar
+        self.name = name
+    }
+}

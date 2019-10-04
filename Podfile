@@ -6,9 +6,11 @@ target 'progetto_subito' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   
+ # Pods for progetto_subito
  pod 'Alamofire', '~> 5.0.0-rc.2'
+ pod 'SwiftyJSON', '~> 4.0'
 
-  # Pods for progetto_subito
+ 
 
   target 'progetto_subitoTests' do
     inherit! :search_paths
