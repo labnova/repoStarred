@@ -1,0 +1,6 @@
+framework module Pods_progetto_subitoUITests {
+  umbrella header "Pods-progetto_subitoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
