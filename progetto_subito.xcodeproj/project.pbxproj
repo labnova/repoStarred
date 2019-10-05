@@ -19,6 +19,8 @@
 		F505516D2347616A00A85CBE /* progetto_subitoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505516C2347616A00A85CBE /* progetto_subitoUITests.swift */; };
 		F505519B2347854800A85CBE /* Pods_progetto_subito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F505518D23476D7000A85CBE /* Pods_progetto_subito.framework */; };
 		F505519C2347854800A85CBE /* Pods_progetto_subito.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F505518D23476D7000A85CBE /* Pods_progetto_subito.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F505519F23479F0000A85CBE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505519E23479F0000A85CBE /* TableViewController.swift */; };
+		F50551A12347DB8800A85CBE /* StarredUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50551A02347DB8800A85CBE /* StarredUserTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		F505517A23476BEE00A85CBE /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F505518D23476D7000A85CBE /* Pods_progetto_subito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_progetto_subito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5055198234784AD00A85CBE /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F505519E23479F0000A85CBE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		F50551A02347DB8800A85CBE /* StarredUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredUserTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,8 @@
 				F50551532347616900A85CBE /* Assets.xcassets */,
 				F50551552347616900A85CBE /* LaunchScreen.storyboard */,
 				F50551582347616900A85CBE /* Info.plist */,
+				F505519E23479F0000A85CBE /* TableViewController.swift */,
+				F50551A02347DB8800A85CBE /* StarredUserTableViewCell.swift */,
 			);
 			path = progetto_subito;
 			sourceTree = "<group>";
@@ -401,7 +407,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F50551A12347DB8800A85CBE /* StarredUserTableViewCell.swift in Sources */,
 				F505514F2347616600A85CBE /* ViewController.swift in Sources */,
+				F505519F23479F0000A85CBE /* TableViewController.swift in Sources */,
 				F505514D2347616600A85CBE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
     
-    var followerRepo: [Any] = []
+    var followerRepo: [User] = []
     
     @IBOutlet weak var author: UITextField!
     @IBOutlet weak var repo: UITextField!
@@ -47,9 +47,10 @@ class ViewController: UIViewController {
                     var login = subJson["login"].stringValue;
                     var user = User(avatar: avatar, name: login)
                     self.followerRepo.append(user);
+                    
                 }
                 
-              print("utenti_ottenuti", self.followerRepo)
+              self.performSegue(withIdentifier: "listStarredUser", sender: nil)
               case .failure(let error):
                 print("Request failed with error: \(error)")
             }
@@ -61,6 +62,14 @@ class ViewController: UIViewController {
         }
         
         
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "listStarredUser" {
+            let vc = segue.destination as? TableViewController
+            vc!.numeroUtenti = self.followerRepo
+        }
     }
 
 
